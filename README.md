@@ -1,4 +1,4 @@
-###Introduction
+### Introduction
 
 deBGA-VARA is a novel variation-aware high-throughput sequencing read aligner. VARA is a variation-aware read global alignment algorithm. We developed deBGA-VARA by integrating VARA into deBGA. It is suitable for aligning various kinds of high-throughput sequencing reads to multiple similar reference genomes.
 
@@ -8,20 +8,20 @@ deBGA has outstanding throughput on reads mapping to genome than other conventio
 
 deBGA-VARA is mainly designed and developed by Hongzhe Guo in Center for Bioinformatics, Harbin Institute of Technology, China.
 
-###Memory requirement
+### Memory requirement
 The memory usage of deBGA-VARA can fit the configurations of most modern servers and workstations. Its peak memory footprint depends on the length of reference genome, i.e., 40.32 Gigabytes for the real H. Sapiens, on a server with  with 2 Intel E5-2630v3 CPUs at 2.4 GHz (12 cores in total), 512 GB RAM and 48 TB hard disk space.
 
 The wall time and memory footprint of the index construction for the references are almost as same as deBGA (https://github.com/HongzheGuo/deBGA). e.g, the memory footprints for GRCh37/hg19 is about 40 Gigabytes and the time is in about 4.5 hours (k-mer size is 22).
 
 The memory footprint of deBGA-VARA when aligning the reads to genome is almost as same as deBGA.
 
-###Installation
+### Installation
 
 Current version of deBGA-VARA needs to be run on Linux operating system.  
 The source code is written in C, and can be directly download from: https://github.com/HongzheGuo/deBGA-VARA  
 The makefile is attached. Use the make command for generating the executable file.  
 
-###Synopsis
+### Synopsis
 
 deBGA index [options] reference.fasta \<index_route\>  
 Index reference in RdBG-Index format  
@@ -29,7 +29,7 @@ Index reference in RdBG-Index format
 deBGA aln [options] \<index_route\> \<single_end_read.fastq [pair_end_read1.fastq pair_end_read2.fastq]\> \<result_file.sam\>  
 Align read to its primitive location in Reference  
 
-###Parameters (could be updated in the future for adding new functions)
+### Parameters (could be updated in the future for adding new functions)
 ```
 deBGA index   
 --ext-alt 				STR	(default: not set) the index construction option for variation aware reference. When –ext-alt option is set, deBGA builds the index of reference and variation knowledge in source .vcf file. 
@@ -98,7 +98,7 @@ deBGA aln
 -p,                     INT the number of threads. The current version of deBGA supports upto 32 threads in read alignment[1].    
 ```
 
-###Quick start
+### Quick start
 
 Genome indexing:
 deBGA index --ext-alt variation.vcf Reference Index_Dir
@@ -106,16 +106,16 @@ deBGA index --ext-alt variation.vcf Reference Index_Dir
 Read alignment:
 deBGA aln --ext-alt-aln Index_Dir Fastq_File Sam_file
 
-###Simulation benchmarking
+### Simulation benchmarking
 
 We simulated two datasets from the human reference genome (GRCh37/hg19) and 200 MB VCF dataset (NA12878) through Mason Simulator (version0.1.2). We simulated Illumina-like pair-end reads with lengths of 100 bp and 250 bp and the mean and standard deviation of the insert size are respectively 500 bp and 25 bp. These datasets helped us to evaluate the performance of deBGA. The datasets have been uploaded to Google Drive, and can be downloaded through the following link:
 
 
-###Reference
+### Reference
 
 Fast variation-aware read alignment with deBGA-VARA.
 
-###Contact
+### Contact
 
 For advising, bug reporting and requiring help, please contact ydwang@hit.edu.cn; hzguo@hit.edu.cn
 
