@@ -9,6 +9,7 @@ deBGA has outstanding throughput on reads mapping to genome than other conventio
 deBGA-VARA is mainly designed and developed by Hongzhe Guo in Center for Bioinformatics, Harbin Institute of Technology, China.
 
 ### Memory requirement
+
 The memory usage of deBGA-VARA can fit the configurations of most modern servers and workstations. Its peak memory footprint depends on the length of reference genome, i.e., 40.32 Gigabytes for the real H. Sapiens, on a server with  with 2 Intel E5-2630v3 CPUs at 2.4 GHz (12 cores in total), 512 GB RAM and 48 TB hard disk space.
 
 The wall time and memory footprint of the index construction for the references are almost as same as deBGA (https://github.com/HongzheGuo/deBGA). e.g, the memory footprints for GRCh37/hg19 is about 40 Gigabytes and the time is in about 4.5 hours (k-mer size is 22).
