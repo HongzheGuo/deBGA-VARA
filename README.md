@@ -1,4 +1,5 @@
 ###Introduction
+
 deBGA-VARA is a novel variation-aware high-throughput sequencing read aligner. VARA is a variation-aware read global alignment algorithm. We developed deBGA-VARA by integrating VARA into deBGA. It is suitable for aligning various kinds of high-throughput sequencing reads to multiple similar reference genomes.
 
 deBGA-VARA indexes the genome and the variation knowledge through de Bruijn graph framework. 
@@ -15,11 +16,13 @@ The wall time and memory footprint of the index construction for the references 
 The memory footprint of deBGA-VARA when aligning the reads to genome is almost as same as deBGA.
 
 ###Installation
+
 Current version of deBGA-VARA needs to be run on Linux operating system.  
 The source code is written in C, and can be directly download from: https://github.com/HongzheGuo/deBGA-VARA  
 The makefile is attached. Use the make command for generating the executable file.  
 
 ###Synopsis
+
 deBGA index [options] reference.fasta \<index_route\>  
 Index reference in RdBG-Index format  
 
@@ -96,18 +99,23 @@ deBGA aln
 ```
 
 ###Quick start
+
 Genome indexing:
 deBGA index --ext-alt variation.vcf Reference Index_Dir
+
 Read alignment:
 deBGA aln --ext-alt-aln Index_Dir Fastq_File Sam_file
 
 ###Simulation benchmarking
+
 We simulated two datasets from the human reference genome (GRCh37/hg19) and 200 MB VCF dataset (NA12878) through Mason Simulator (version0.1.2). We simulated Illumina-like pair-end reads with lengths of 100 bp and 250 bp and the mean and standard deviation of the insert size are respectively 500 bp and 25 bp. These datasets helped us to evaluate the performance of deBGA. The datasets have been uploaded to Google Drive, and can be downloaded through the following link:
 
 
 ###Reference
+
 Fast variation-aware read alignment with deBGA-VARA.
 
 ###Contact
+
 For advising, bug reporting and requiring help, please contact ydwang@hit.edu.cn; hzguo@hit.edu.cn
 
